@@ -1,5 +1,5 @@
 function isNumeric(str) {
-    if (typeof str != "string") return false // we only process strings!  
+    if (typeof str != "string") return false // we only process strings!
     return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
 }
@@ -52,7 +52,7 @@ var inactivityTime = function() {
         timer = setTimeout(timerElapsed, 1 * 10 * 1000); // timeout ms
     }
 };
-inactivityTime()
+// inactivityTime()
 
 
 // VideoKiosk
@@ -69,7 +69,7 @@ inactivityTime()
 //     // for (let topic in data[lang]) {
 //     for (let topic in data) {
 
-//         // remove x_ 
+//         // remove x_
 //         let s = topic
 //         if (isNumeric(s.split('_')[0])) s = s.split('_')[1]
 
@@ -94,7 +94,7 @@ inactivityTime()
 
 //         // video grid
 //         for (let video of data[topic]) {
-//             // remove x_ 
+//             // remove x_
 //             let nameV = video
 //             if (isNumeric(nameV.split('_')[0])) nameV = nameV.split('_')[1]
 //             nameV = nameV.split('.').slice(0, -1).join('.')

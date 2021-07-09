@@ -1,17 +1,23 @@
 @font-face {
-    font-family: 'GGcanut-bold';
-    src: url('fonts/GGcanut_Extra-Bold.otf');
+    font-family: 'MarkPro-black';
+    src: url('fonts/MarkPro-Black.otf');
 }
 
 @font-face {
-    font-family: 'GGcanut-medium';
-    src: url('fonts/GGcanut_Medium.otf');
+    font-family: 'Montserrat-bold';
+    src: url('fonts/Montserrat-Bold.otf');
 }
 
 @font-face {
-    font-family: 'GGcanut-regular';
-    src: url('fonts/GGcanut_Regular.otf');
+    font-family: 'Montserrat-medium';
+    src: url('fonts/Montserrat-Medium.otf');
 }
+
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url('fonts/Montserrat-Regular.otf');
+}
+
 
 body {
     padding: 0;
@@ -23,13 +29,13 @@ body {
     left: 0;
     right: 0;
     overflow: hidden;
-    font-family: 'GGcanut-bold', Arial, sans-serif;
+    font-family: 'MarkPro-black', Arial, sans-serif;
     font-size: 22px;
     color: white;
-    background-image: url('/media/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid pink;
+
 }
 
 body {
@@ -42,10 +48,31 @@ body {
     outline: none;
 }
 
+.title_big{
+  font-size: 76px;
+  line-height: 84px;
+}
+
+#page_home{
+  width:100%;
+  height:100%;
+  background-image: url('img/bg1.jpg');
+  background-size:100%;
+}
+
+#btn_home{
+
+  text-transform: uppercase;
+  margin-top: 17%;
+  position: absolute;
+  margin-left: 35%;
+  transform: rotate(-6deg);
+}
+
+
 #mainframe {
     width: 100%;
     margin: auto;
-    /* background-color: black; */
     height: 100%;
     overflow-y: auto;
     position: relative;
@@ -56,182 +83,4 @@ body {
 
 #mainframe::-webkit-scrollbar {
     display: none;
-}
-
-
-/* LANGUAGE */
-
-.lang-btn {
-    display: inline-block;
-    background-color: burlywood;
-    height: 50px;
-    line-height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    text-align: center;
-}
-
-
-/* MENU  */
-
-#menu {
-    /* background-color: bisque; */
-    background-image: url('/media/accueil.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 200;
-    border: 1px solid green;
-}
-
-#menu.visible {
-    display: block;
-}
-
-.topic {
-    background-color: transparent;
-    position: absolute;
-    padding: 10px;
-    opacity: 1;
-    height: auto;
-}
-
-
-/* GALLERY  */
-
-.gallery {
-    position: relative;
-    width: calc(100% - 200px);
-    /* margin: auto; */
-    margin: 175px auto;
-    background-color: black;
-    display: none;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    row-gap: 30px;
-    column-gap: 170px;
-    opacity: 0;
-}
-
-.gallery.visible {
-    display: grid;
-}
-
-.gallery-title {
-    position: fixed;
-    height: 65px;
-    line-height: 65px;
-    top: 0;
-    padding: 60px 0 25px;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
-    width: calc(100% - 200px);
-    font-size: 25px;
-    background-color: black;
-    text-align: center;
-    z-index: 100;
-}
-
-.title,
-.subtitle {
-    line-height: 30px;
-}
-
-.subtitle {
-    font-family: 'GGcanut-regular', Arial, sans-serif;
-}
-
-.gallery-back {
-    position: absolute;
-    left: 0px;
-    top: 60px;
-    height: 65px;
-    line-height: 65px;
-    opacity: 1;
-}
-
-.video-cell {
-    width: 100%;
-    /* height: 80%; */
-    margin: auto;
-    position: relative;
-}
-
-.video-preview {
-    position: relative;
-    width: 100%;
-    background-color: black;
-    padding: 5px 0;
-}
-
-.video-snapshot {
-    width: 100%;
-    /* object-fit: contain; */
-    /* filter: sepia(100%) hue-rotate(140deg) saturate(190%); */
-    display: block;
-}
-
-.video-play {
-    width: 100px;
-    position: absolute;
-    left: calc(50% - 50px);
-    top: calc(50% - 50px);
-}
-
-.video-legend {
-    padding: 5px 0;
-    /* background-color: #A4DDEA; */
-}
-
-
-/* PLAYER  */
-
-#player {
-    background-color: black;
-    display: none;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 300;
-}
-
-#player.visible {
-    display: block;
-}
-
-.mediaplayer {
-    width: 100%;
-    height: 100%;
-}
-
-.progress {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: white;
-}
-
-.progress .bar {
-    height: 100%;
-    width: 0%;
-    background-color: black;
-}
-
-.close {
-    position: absolute;
-    right: 100px;
-    top: 60px;
-    opacity: 1;
 }
