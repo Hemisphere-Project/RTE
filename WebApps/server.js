@@ -7,13 +7,33 @@ const { readdirSync } = require('fs')
 const fs = require('fs')
 const os = require('os')
 const chokidar = require('chokidar');
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
+
+const axios = require('axios');
+const mime = require('mime');
+
 
 // NUC name
 var hostname = os.hostname();
 
+
 // FOLDER
 var folder = process.argv[2];
+if (folder === undefined) folder = os.hostname();
+
+
+// MIME
+const regex = /\s+(href|src)=['"](.*?)['"]/g;
+const getMimeType = url => {
+    if(url.indexOf('?') !== -1) { // remove url query so we can have a clean extension
+        url = url.split("?")[0];
+    }
+    //console.log(url)
+    mimeExt = mime.lookup(url)
+    if (mimeExt == 'application/x-msdownload' || mimeExt == 'application/octet-stream') mimeExt = 'text/html';
+    //console.log(mimeExt)
+    return mimeExt || 'text/html'; // if there is no extension return as html
+};
 
 // EXPRESS Server
 //
@@ -27,7 +47,37 @@ app.get('/', (req, res) => {
 });
 
 // RTE-FRANCE IFRAME
-app.get('/rte', (req, res) => {
+app.get('/iframe', (req, res) => {
+    const { url } = req.query; // get url parameter
+    if(!url) {
+      res.type('text/html');
+      return res.end("You need to specify <code>?url=</code> query parameter");
+    }
+    
+    axios.get(url, { responseType: 'arraybuffer'  }) // set response type array buffer to access raw data
+        .then(({ data }) => {
+            const urlMime = getMimeType(url); // get mime type of the requested url
+            if(urlMime === 'text/html') { // replace links only in html
+                data = data.toString().replace(regex, (match, p1, p2)=>{
+                    let newUrl = '';
+                    if(p2.indexOf('http') !== -1) {
+                        newUrl = p2;
+                    } else if (p2.substr(0,2) === '//') {
+                        newUrl = 'http:' + p2;
+                    } else {
+                        const searchURL = new URL(url);
+                        newUrl = searchURL.protocol + '//' + searchURL.host + p2;
+                    }
+                    return ` ${p1}="${req.protocol}://${req.hostname}:5000/iframe?url=${newUrl}"`;
+                });
+            }
+            res.type(urlMime);
+            res.send(data);
+        }).catch(error => {
+            //console.log(error);
+        });
+});
+/*app.get('/rte', (req, res) => {
   var url = 'https://rte-france.com'
   // require('request').get(url).pipe(res);  // res being Express response
   fetch(url).then(actual => {
@@ -35,6 +85,7 @@ app.get('/rte', (req, res) => {
       actual.body.pipe(res);
   });
 });
+*/
 
 
 // ASSETS path /assets
