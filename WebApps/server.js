@@ -11,17 +11,20 @@ const chokidar = require('chokidar');
 // NUC name
 var hostname = os.hostname();
 
+// FOLDER
+var folder = process.argv[2];
 
 // EXPRESS Server
 //
 
 // BASE PATH for web files (based on hostname)
-app.use(express.static(__dirname + '/' + hostname))
+app.use(express.static(__dirname + '/' + folder))
 
 // INDEX (default page)
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/' + hostname + '/index.html');
+    res.sendFile(__dirname + '/' + folder + '/index.html');
 });
+
 
 // ASSETS path /assets
 app.use('/assets', express.static(__dirname + '/assets'))
@@ -45,4 +48,5 @@ io.on('connection', (socket) => {
 // GO
 http.listen(5000, () => {
     console.log('listening on *:5000');
+    console.log(folder);
 });

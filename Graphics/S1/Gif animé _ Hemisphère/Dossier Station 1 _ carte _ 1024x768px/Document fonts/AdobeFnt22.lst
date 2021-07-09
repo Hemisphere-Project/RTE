@@ -1,0 +1,37 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/mahe/Dropbox/L+M/_l+m | RTE/____RTE | CONTENU TXT IM | Mahe/_ECRANS VIDEO/Hemisphère/Dossier Station 1 | carte | 1024x768px/Document fonts/AdobeFnt22.lst
+FileLength:702
+FileModTime:638102572
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MarkPro-Black
+FamilyName:Mark Pro
+StyleName:Black
+MenuName:MarkPro-Black
+StyleBits:0
+WeightClass:900
+WidthClass:5
+AngleClass:0
+FullName:MarkPro-Black
+WritingScript:Roman
+OutlineFileName:/Users/mahe/Dropbox/L+M/_l+m | RTE/____RTE | CONTENU TXT IM | Mahe/_ECRANS VIDEO/Hemisphère/Dossier Station 1 | carte | 1024x768px/Document fonts/FontFont_FF.Mark.Pro.Black.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:164300
+FileModTime:399368636
+NameArray:0,Mac,4,MarkPro-Black
+NameArray:0,Win,1,MarkPro-Black
+NameArray:0,Win,16,Mark Pro
+%EndFont
+
