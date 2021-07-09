@@ -7,6 +7,7 @@ const { readdirSync } = require('fs')
 const fs = require('fs')
 const os = require('os')
 const chokidar = require('chokidar');
+const fetch = require('node-fetch');
 
 // NUC name
 var hostname = os.hostname();
@@ -23,6 +24,16 @@ app.use(express.static(__dirname + '/' + folder))
 // INDEX (default page)
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/' + folder + '/index.html');
+});
+
+// RTE-FRANCE IFRAME
+app.get('/rte', (req, res) => {
+  var url = 'https://rte-france.com'
+  // require('request').get(url).pipe(res);  // res being Express response
+  fetch(url).then(actual => {
+      actual.headers.forEach((v, n) => res.setHeader(n, v));
+      actual.body.pipe(res);
+  });
 });
 
 
