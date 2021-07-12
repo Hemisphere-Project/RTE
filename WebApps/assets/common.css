@@ -47,16 +47,16 @@ body {
 }
 
 .title_big{
-  font-size: 76px;
-  line-height: 84px;
+  font-size: 85px;
+  line-height: 90px;
 }
 .title_medium{
   font-size: 50px;
-  line-height: 50px;
+  line-height: 50px;  
 }
 .title_small{
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 35px;
+  line-height: 35px;
 }
 
 /*HOME PAGE*/
@@ -68,9 +68,9 @@ body {
 }
 #btn_home{
   text-transform: uppercase;
-  margin-top: 17%;
+  margin-top: 15%;
   position: absolute;
-  margin-left: 35%;
+  margin-left: 33%;
   transform: rotate(-6deg);
 }
 
