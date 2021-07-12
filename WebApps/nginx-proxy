@@ -1,0 +1,99 @@
+
+# RTE
+#
+server {
+  listen 8085;
+
+  location / {
+    proxy_pass  https://www.rte-france.com/;
+    proxy_redirect https://rte-france.com/ http://localhost:8085/;
+    proxy_redirect https://www.rte-france.com/ http://localhost:8085/;
+    #proxy_set_header Host https://rte-france.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_hide_header 'x-frame-options';
+    proxy_cookie_domain www.rte-france.com localhost;
+    proxy_cookie_domain rte-france.com localhost;
+  }
+}
+
+
+# SITE 2
+#
+server {
+  listen 8086;
+
+  location / {
+    proxy_pass  https://www.rte-france.com/;
+    proxy_redirect https://rte-france.com/ http://localhost:8085/;
+    proxy_redirect https://www.rte-france.com/ http://localhost:8085/;
+    #proxy_set_header Host https://rte-france.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_hide_header 'x-frame-options';
+    proxy_cookie_domain www.rte-france.com localhost;
+    proxy_cookie_domain rte-france.com localhost;
+  }
+}
+
+
+# SITE 3
+#
+server {
+  listen 8087;
+
+  location / {
+    proxy_pass  https://www.rte-france.com/;
+    proxy_redirect https://rte-france.com/ http://localhost:8085/;
+    proxy_redirect https://www.rte-france.com/ http://localhost:8085/;
+    #proxy_set_header Host https://rte-france.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_hide_header 'x-frame-options';
+    proxy_cookie_domain www.rte-france.com localhost;
+    proxy_cookie_domain rte-france.com localhost;
+  }
+}
+
+
+# SITE 4
+#
+server {
+  listen 8088;
+
+  location / {
+    proxy_pass  https://www.rte-france.com/;
+    proxy_redirect https://rte-france.com/ http://localhost:8085/;
+    proxy_redirect https://www.rte-france.com/ http://localhost:8085/;
+    #proxy_set_header Host https://rte-france.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_hide_header 'x-frame-options';
+    proxy_cookie_domain www.rte-france.com localhost;
+    proxy_cookie_domain rte-france.com localhost;
+  }
+}
+
+
+# SITE 5
+#
+server {
+  listen 8089;
+
+  location / {
+    proxy_pass  https://www.rte-france.com/;
+    proxy_redirect https://rte-france.com/ http://localhost:8085/;
+    proxy_redirect https://www.rte-france.com/ http://localhost:8085/;
+    #proxy_set_header Host https://rte-france.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_hide_header 'x-frame-options';
+    proxy_cookie_domain www.rte-france.com localhost;
+    proxy_cookie_domain rte-france.com localhost;
+  }
+}
