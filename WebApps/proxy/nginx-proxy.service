@@ -1,0 +1,13 @@
+[Unit]
+Description=Apply nginx-proxy config to nginx
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=nginx-proxy
+Restart=on-failure
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target
+
