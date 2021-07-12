@@ -1,0 +1,3 @@
+#!/bin/bash
+ln -sf /data/RTE/WebApps/proxy/nginx-proxy.conf /etc/nginx/sites-enabled/
+systemctl restart nginx
