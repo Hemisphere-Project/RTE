@@ -46,18 +46,54 @@ body {
     outline: none;
 }
 
+.title_maxi{
+  font-family: 'MarkPro-black', Arial, sans-serif;
+  font-size: 120px;
+  line-height: 120px;
+}
 .title_big{
-  font-size: 85px;
-  line-height: 90px;
+  font-family: 'MarkPro-black', Arial, sans-serif;
+  font-size: 94px;
+  line-height: 94px;
 }
 .title_medium{
+  font-family: 'MarkPro-black', Arial, sans-serif;
   font-size: 50px;
-  line-height: 50px;  
+  line-height: 50px;
 }
 .title_small{
+  font-family: 'MarkPro-black', Arial, sans-serif;
   font-size: 35px;
   line-height: 35px;
 }
+.text_medium{
+  font-family: 'Montserrat-medium', Arial, sans-serif;
+  font-size: 35px;
+  line-height: 35px;
+}
+.text_small{
+  font-family: 'Montserrat-medium', Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+}
+.text_mini{
+  font-family: 'Montserrat-medium', Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.capslock{
+  text-transform: uppercase;
+}
+
+/*INTERACT*/
+.btn{
+  cursor: pointer;
+}
+.btn:active{
+  opacity:0.7;
+}
+
 
 /*HOME PAGE*/
 #page_home{
@@ -67,7 +103,6 @@ body {
   background-size:100%;
 }
 #btn_home{
-  text-transform: uppercase;
   margin-top: 15%;
   position: absolute;
   margin-left: 33%;

@@ -9,7 +9,8 @@
     <title>RTE-WEBAPP</title>
 
     <!-- LIBS -->
-    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="/assets/libs/socket.io.js"></script>
     <script src="/assets/libs/jquery-3.5.1.min.js"></script>
     <script src="/assets/libs/hammer.min.js"></script>
     <script src="/assets/libs/jquery.hammer.js"></script>
@@ -23,9 +24,54 @@
 
 <body>
 
-    <div id="menu"></div>
-    <div id="mainframe">Hello</div>
-    <div id="player"></div>
+
+    <!-- <div class="page" id="page_home">
+      <div class="title_big capslock btn" id="btn_home">Touchez l'écran <br>pour accéder <br>à son contenu</div>
+    </div> -->
+
+    <!-- <div class="page" id="page_list">
+      <div class="list">
+        <div class="list_item btn">
+          <div class="title_maxi">Film</div>
+          <div class="videolegend">
+            <div class="title_small">Durée • </div>
+            <div class="text_medium">5 min</div>
+          </div>
+        </div>
+        <div class="list_item btn">
+          <div class="title_maxi">Galerie Photo</div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="page" id="page_gallery_list">
+      <div class="list">
+        <div class="list_item btn">
+          <div class="list_item_title title_big">Ariane</div>
+          <div class="list_item_legend text_small">1970 • 1986</div>
+        </div>
+        <div class="list_item btn">
+          <div class="list_item_title title_big">Briséis</div>
+          <div class="list_item_legend text_small">1975 • 1985</div>
+        </div>
+        <div class="list_item btn">
+          <div class="list_item_title title_big">Cynthia</div>
+          <div class="list_item_legend text_small">1985 • 1994</div>
+        </div>
+        <div class="list_item btn">
+          <div class="list_item_title title_big">Daphné</div>
+          <div class="list_item_legend text_small">1986 • 2010</div>
+        </div>
+        <div class="list_item btn">
+          <div class="list_item_title title_big">Electre</div>
+          <div class="list_item_legend text_small">dès 2002</div>
+        </div>
+      </div>
+      <div class="btn" id="btn_close"> <img src="/assets/img/retour.png" alt=""> </div>
+      <div class="title_big" id="page_gallery_list_title">Les Fileries</div>
+    </div>
+
 
     <!-- JS -->
     <script src="/assets/common.js"></script>

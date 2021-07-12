@@ -3,7 +3,7 @@ $('.page').hide()
 $('#page_home').show()
 
 
-$('#btn_home').click(function(){
+$('#page_home').click(function(){
   $('#page_list').fadeIn(300)
 })
 
