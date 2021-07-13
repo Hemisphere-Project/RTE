@@ -1,10 +1,9 @@
 #page_list, #page_gallery_list #page_gallery, #page_video{
-  /* display: none; */
+  display: none;
   width:100%;
   height:100vh;
   background-size:100%;
   position: absolute;
-  z-index:20;
 }
 
 #page_list{
@@ -35,6 +34,30 @@
 #page_list .list_item .videolegend *{
   display:inline-block;
   padding-top: 60px;
+}
+
+/*VIDEO*/
+#page_video video{
+  width:100%;
+}
+
+#scrollbarContainer{
+  position: absolute;
+  bottom: 10vh;
+  display: inline-block;
+  width: 80%;
+  left:0;
+  margin-left:10%;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+#scrollbar{
+  background-color: white;
+  width: 2px;
+  height: 20px;
+  border-radius: 10px;
 }
 
 
@@ -87,14 +110,26 @@
 
 /*GALLERY*/
 #page_gallery .gallery{
-  width:76%;
+  width:70%;
   padding-left: 8%;
   padding-top: 10vh;
 }
 #page_gallery .gallery .gallery_item img{
   width: 100%;
   max-height: 80vh;
-  /* object-fit: contain; */
+  /* object-fit: cover; */
+}
+#page_gallery .gallery .legend{
+  position: fixed;
+  float: right;
+  right: 7%;
+  bottom: 10vh;
+  box-sizing: border-box;
+  width: 14%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #page_gallery #btn_close_gallery{
