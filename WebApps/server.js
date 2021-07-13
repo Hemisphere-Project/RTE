@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.use('/assets', express.static(__dirname + '/assets'))
 
 // MEDIA path /media
-app.use('/media', express.static(__dirname + '/media'))
+app.use('/medias', express.static(__dirname + '/medias'))
 
 
 // SOCKETIO
