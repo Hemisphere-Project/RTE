@@ -44,8 +44,8 @@
 
 
 #page_gallery_list .list{
-  width:78%;
-  padding-left: 8%;
+  width:80%;
+  padding-left: 5%;
   padding-top: 10vh;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -82,6 +82,6 @@
 
 #page_gallery_list #page_gallery_list_title{
   float: right;
-  margin-right: 14%;
+  margin-right: 15%;
   margin-top:60px;
 }
