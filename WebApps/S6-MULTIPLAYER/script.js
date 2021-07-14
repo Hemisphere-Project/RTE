@@ -186,7 +186,7 @@ function attachPinch(indexDisplay){
   // ENABLE PINCH
   var hamObj2 = new Hammer($(image)[0]);
   hamObj2.get('pinch').set({ enable: true });
-  $(image).data("hammer", hamObj);
+  $(image).data("hammer", hamObj2);
 
 
   $(image).hammer().on("pinch", function(event) {
