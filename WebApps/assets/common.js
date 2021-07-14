@@ -47,19 +47,20 @@ var inactivityTime = function() {
     document.onclick = timerReset;
     document.onscroll = timerReset;
     document.onkeypress = timerReset;
+    $('#videoplayer').on('timeupdate', function(e){timerReset()})
 
     function timerElapsed() {
-        console.log("Timer elapsed");
+        // console.log("Timer elapsed");
         location.reload();
     };
 
     function timerReset() {
-        console.log("Reseting timer");
+      // console.log("resetting timer");
         clearTimeout(timer);
-        timer = setTimeout(timerElapsed, 1 * 10 * 1000); // timeout ms
+        timer = setTimeout(timerElapsed, 30000); // timeout ms
     }
 };
-// inactivityTime()
+inactivityTime()
 
 
 // VideoKiosk

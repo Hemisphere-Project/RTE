@@ -3,7 +3,6 @@
 $('.page').hide()
 $('#page_home').show()
 
-
 $('#page_home').click(function(){
   $(this).hide()
   $('#page_list').fadeIn(300)
@@ -19,7 +18,6 @@ $(".list_item").click(function(){
   })
 })
 
-
 // LANGUE
 $('.video_en').hide();
 
@@ -31,8 +29,6 @@ $('#btn_en_home, #btn_en_list').click(function(){
   $('.video_fr').hide();
   $('.video_en').show();
 })
-
-
 
 
 //////////////// VIDEO PLAYER ////////////////
@@ -68,7 +64,6 @@ $('#scrollbarContainer').on('click',function(e){
   $('#videoplayer')[0].currentTime = time2Seek
   $('#scrollbar').css('width', percent+'%')
 });
-
 
 // END || CLOSE
 $('#videoplayer').on('ended',function(){

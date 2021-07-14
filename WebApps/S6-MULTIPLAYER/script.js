@@ -3,7 +3,6 @@
 $('.page').hide()
 $('#page_home').show()
 
-
 $('#page_home').click(function(){
   $(this).hide()
   $('#page_list').fadeIn(300)
@@ -30,10 +29,6 @@ $('#btn_close_gallery').click(function(){
   $('#page_gallery').hide()
   $('#page_gallery_list').fadeIn(300)
 })
-
-
-
-
 
 
 //////////////// VIDEO PLAYER ////////////////
@@ -69,7 +64,6 @@ $('#scrollbarContainer').on('click',function(e){
   $('#videoplayer')[0].currentTime = time2Seek
   $('#scrollbar').css('width', percent+'%')
 });
-
 
 // END || CLOSE
 $('#videoplayer').on('ended',function(){
@@ -119,8 +113,6 @@ var autoHideControls = function() {
 autoHideControls();
 
 
-
-
 //////////////// GALLERY ////////////////
 var indexDisplay = 1
 var galleryLength = $('.gallery_item').length
@@ -166,6 +158,5 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item').hide();
   $('.gallery_item:nth-child('+indexDisplay+')').addClass('active');
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
-
 
 })
