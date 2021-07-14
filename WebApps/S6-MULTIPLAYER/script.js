@@ -151,22 +151,15 @@ $('#page_gallery_list .list_item').click(function(){
 
 //////////////// PINCH ZOOM ////////////////
 
-// DON'T WORK
+// inspired from
 // https://stackoverflow.com/questions/10802176/pinch-to-zoom-with-css3
 // -- ?
-// pinch enabled ? sur wrapper ou sur div ? à débugger depuis touch device
-
-// var hamObj = new Hammer($('body')[0]);
-// hamObj.get('pinch').set({ enable: true });
-// $('body').data("hammer", hamObj);
-// $('body').hammer().on("pinch", function(event) {
-//   console.log('pinching');
-// });
 
 // var hammertime = new Hammer($('body')[0]);
 // hammertime.get('pinch').set({ enable: true });
 // hammertime.on("pinch", function(e) { });
 
+// RESET PINCH
 
 function attachPinch(indexDisplay){
 
@@ -182,13 +175,13 @@ function attachPinch(indexDisplay){
   var  offset = wrapper.offset();
 
   // ENABLE PINCH
-  // var hamObj = new Hammer($(wrapper)[0]);
-  // hamObj.get('pinch').set({ enable: true });
-  // $(wrapper).data("hammer", hamObj);
+  var hammerObj1 = new Hammer($(wrapper)[0]);
+  hammerObj1.get('pinch').set({ enable: true });
+  $(wrapper).data("hammer", hammerObj1);
   // ENABLE PINCH
-  var hamObject = new Hammer($(image)[0]);
-  hamObject.get('pinch').set({ enable: true });
-  $(image).data("hammer", hamObject);
+  var hammerObj2 = new Hammer($(image)[0]);
+  hammerObj2.get('pinch').set({ enable: true });
+  $(image).data("hammer", hammerObj2);
 
 
   $(image).hammer().on("pinch", function(event) {
