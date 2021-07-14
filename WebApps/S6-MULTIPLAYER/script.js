@@ -155,7 +155,13 @@ $('#page_gallery_list .list_item').click(function(){
 //   new PinchZoom.default(div, {});
 // })
 
+
 $('.gallery_item').each(function(index,div){
+
+  var hamObj = new Hammer($(div)[0]);
+  hamObj.get('pinch').set({ enable: true });
+  $(div).data("hammer", hamObj);
+
   var wrapper = $(div)
   var img = $(div).children('img')
   attachPinch(wrapper,img)
@@ -164,35 +170,35 @@ $('.gallery_item').each(function(index,div){
 
 function attachPinch(wrapperID,imgID)
 {
-    var image = $(imgID);
-    var wrap = $(wrapperID);
+  var image = $(imgID);
+  var wrap = $(wrapperID);
+  var  width = image.width();
+  var  height = image.height();
+  var  newX = 0;
+  var  newY = 0;
+  var  offset = wrap.offset();
 
-    var  width = image.width();
-    var  height = image.height();
-    var  newX = 0;
-    var  newY = 0;
-    var  offset = wrap.offset();
+  $(imgID).hammer().on("pinch", function(event) {
+    console.log('pinching');
+    var photo = $(this);
 
-    $(imgID).hammer().on("pinch", function(event) {
-        var photo = $(this);
+    newWidth = photo.width() * event.gesture.scale;
+    newHeight = photo.height() * event.gesture.scale;
 
-        newWidth = photo.width() * event.gesture.scale;
-        newHeight = photo.height() * event.gesture.scale;
+    // Convert from screen to image coordinates
+    var x;
+    var y;
+    x -= offset.left + newX;
+    y -= offset.top + newY;
 
-        // Convert from screen to image coordinates
-        var x;
-        var y;
-        x -= offset.left + newX;
-        y -= offset.top + newY;
+    newX += -x * (newWidth - width) / newWidth;
+    newY += -y * (newHeight - height) / newHeight;
 
-        newX += -x * (newWidth - width) / newWidth;
-        newY += -y * (newHeight - height) / newHeight;
+    photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
+    wrap.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
 
-        photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
-        wrap.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
-
-        width = newWidth;
-        height = newHeight;
-    });
+    width = newWidth;
+    height = newHeight;
+  });
 
 }
