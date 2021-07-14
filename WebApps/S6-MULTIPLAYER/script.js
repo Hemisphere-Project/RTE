@@ -143,37 +143,38 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item:nth-child('+indexDisplay+')').addClass('active');
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
 
+  initPinch(indexDisplay);
 })
 
 
 //////////////// PINCH ZOOM ////////////////
 
-// var el = document.querySelector('div.pinch-zoom');
-// new PinchZoom.default(el, {});
+// DON'T WORK
+// https://stackoverflow.com/questions/10802176/pinch-to-zoom-with-css3
+// -- ?
+// {hamObj = new Hammer($el[0], options); hamObj.get('pinch').set({ enable: true }); $el.data("hammer", hamObj);}
 
-// $('.gallery_item img').each(function(index,div){
-//   new PinchZoom.default(div, {});
-// })
+function initPinch(indexDisplay){
 
+  var wrapper = $('.gallery_item:nth-child('+indexDisplay+')')
+  var img = $(wrapper).children('img')
 
-$('.gallery_item').each(function(index,div){
-
-  var hamObj = new Hammer($(div)[0]);
+  var hamObj = new Hammer($(wrapper)[0]);
   hamObj.get('pinch').set({ enable: true });
-  $(div).data("hammer", hamObj);
+  $(wrapper).data("hammer", hamObj);
 
-  var wrapper = $(div)
-  var img = $(div).children('img')
   attachPinch(wrapper,img)
-})
+
+}
 
 
-function attachPinch(wrapperID,imgID)
-{
+function attachPinch(wrapperID,imgID){
+
   var image = $(imgID);
   var wrap = $(wrapperID);
   var  width = image.width();
   var  height = image.height();
+  console.log(width);
   var  newX = 0;
   var  newY = 0;
   var  offset = wrap.offset();
