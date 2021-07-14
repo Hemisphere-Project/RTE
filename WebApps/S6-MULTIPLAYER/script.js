@@ -152,7 +152,7 @@ $('#page_gallery_list .list_item').click(function(){
 // DON'T WORK
 // https://stackoverflow.com/questions/10802176/pinch-to-zoom-with-css3
 // -- ?
-// {hamObj = new Hammer($el[0], options); hamObj.get('pinch').set({ enable: true }); $el.data("hammer", hamObj);}
+// pinch enabled ? sur wrapper ou sur div ? à débugger depuis touch device
 
 function initPinch(indexDisplay){
 

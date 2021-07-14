@@ -76,7 +76,7 @@
 }
 #page_video #scrollbarContainer{
   position: absolute;
-  bottom: 10vh;
+  bottom: 5vh;
   display: inline-block;
   width: 84%;
   left:0;
@@ -95,6 +95,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1%;
+  margin: 2%;
   width: 3%;
 }
