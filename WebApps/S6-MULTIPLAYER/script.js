@@ -154,6 +154,13 @@ $('#page_gallery_list .list_item').click(function(){
 // -- ?
 // pinch enabled ? sur wrapper ou sur div ? à débugger depuis touch device
 
+var hamObj = new Hammer($('body')[0]);
+hamObj.get('pinch').set({ enable: true });
+$('body').data("hammer", hamObj);
+
+$('body').hammer().on("pinch", function(event) {
+});
+
 
 function attachPinch(indexDisplay){
 
@@ -176,7 +183,7 @@ function attachPinch(indexDisplay){
   var hamObj2 = new Hammer($(image)[0]);
   hamObj2.get('pinch').set({ enable: true });
   $(image).data("hammer", hamObj);
-  
+
 
   $(image).hammer().on("pinch", function(event) {
     console.log('pinching');
