@@ -161,9 +161,9 @@ $('#page_gallery_list .list_item').click(function(){
 //   console.log('pinching');
 // });
 
-var hammertime = new Hammer($('body')[0]);
-hammertime.get('pinch').set({ enable: true });
-hammertime.on("pinch", function(e) { console.log("pinching body") });
+// var hammertime = new Hammer($('body')[0]);
+// hammertime.get('pinch').set({ enable: true });
+// hammertime.on("pinch", function(e) { });
 
 
 function attachPinch(indexDisplay){
