@@ -123,22 +123,6 @@ $('#btn_next').click(function(){
   if (indexDisplay>galleryLength){indexDisplay=1}
   gotoIndex(indexDisplay)
 })
-// HAMMERJS
-var pantype;
-var mc = new Hammer($("#page_gallery")[0]);
-  mc.on("panleft panright", function(ev) { pantype = ev.type; });
-  mc.on("panend", function(ev) {
-  if(pantype == 'panright'){
-    indexDisplay --
-    if (indexDisplay<0){indexDisplay=galleryLength}
-  }else if(pantype == 'panleft'){
-    indexDisplay ++
-    if (indexDisplay>galleryLength){indexDisplay=1}
-  }
-  console.log(indexDisplay);
-  gotoIndex(indexDisplay)
-});
-
 
 function gotoIndex(index){
   $('.gallery_item.active').fadeOut(200,function(){
@@ -160,3 +144,55 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
 
 })
+
+
+//////////////// PINCH ZOOM ////////////////
+
+// var el = document.querySelector('div.pinch-zoom');
+// new PinchZoom.default(el, {});
+
+// $('.gallery_item img').each(function(index,div){
+//   new PinchZoom.default(div, {});
+// })
+
+$('.gallery_item').each(function(index,div){
+  var wrapper = $(div)
+  var img = $(div).children('img')
+  attachPinch(wrapper,img)
+})
+
+
+function attachPinch(wrapperID,imgID)
+{
+    var image = $(imgID);
+    var wrap = $(wrapperID);
+
+    var  width = image.width();
+    var  height = image.height();
+    var  newX = 0;
+    var  newY = 0;
+    var  offset = wrap.offset();
+
+    $(imgID).hammer().on("pinch", function(event) {
+        var photo = $(this);
+
+        newWidth = photo.width() * event.gesture.scale;
+        newHeight = photo.height() * event.gesture.scale;
+
+        // Convert from screen to image coordinates
+        var x;
+        var y;
+        x -= offset.left + newX;
+        y -= offset.top + newY;
+
+        newX += -x * (newWidth - width) / newWidth;
+        newY += -y * (newHeight - height) / newHeight;
+
+        photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
+        wrap.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
+
+        width = newWidth;
+        height = newHeight;
+    });
+
+}
