@@ -73,19 +73,19 @@ $('#scrollbarContainer').on('click',function(e){
 
 // END || CLOSE
 $('#videoplayer').on('ended',function(){
-  $('#page_video').hide()
-  $('#page_list').fadeIn(300)
-  clearInterval(scrollBarUpdate)
-  $('#scrollbar').css('width', '0%')
-  $("#videoplayer")[0].currentTime = 0
+  stopFilm();
 });
 $('#btn_close_video').click(function(){
+  stopFilm();
+})
+function stopFilm(){
   $('#page_video').hide()
   $('#page_list').fadeIn(300)
   clearInterval(scrollBarUpdate)
   $('#scrollbar').css('width', '0%')
   $("#videoplayer")[0].currentTime = 0
-})
+  $("#videoplayer")[0].pause()
+}
 
 //AUTO HIDE CONTROLS
 var idleTime = 3000;
