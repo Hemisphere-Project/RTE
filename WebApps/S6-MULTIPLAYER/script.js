@@ -180,13 +180,13 @@ function attachPinch(indexDisplay){
   var  offset = wrapper.offset();
 
   // ENABLE PINCH
-  var hamObj = new Hammer($(wrapper)[0]);
-  hamObj.get('pinch').set({ enable: true });
-  $(wrapper).data("hammer", hamObj);
+  // var hamObj = new Hammer($(wrapper)[0]);
+  // hamObj.get('pinch').set({ enable: true });
+  // $(wrapper).data("hammer", hamObj);
   // ENABLE PINCH
-  // var hamObj2 = new Hammer($(image)[0]);
-  // hamObj2.get('pinch').set({ enable: true });
-  // $(image).data("hammer", hamObj);
+  var hamObj2 = new Hammer($(image)[0]);
+  hamObj2.get('pinch').set({ enable: true });
+  $(image).data("hammer", hamObj);
 
 
   $(image).hammer().on("pinch", function(event) {
