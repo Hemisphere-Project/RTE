@@ -17,19 +17,32 @@
   bottom: 10vh;
   right: 8%;
 }
+
+.btn_langage_home{
+  display: inline-block;
+  color: black;
+  background-color: white;
+  width: 80px;
+  margin-left: 10px;
+  border-radius: 22px;
+  line-height: 50px;
+  text-align: center;
+}
 .btn_langage_list_container{
   position: absolute;
   top: 2vh;
   right: 8%;
 }
-.btn_langage{
+.btn_langage_list{
   display: inline-block;
   color: black;
   background-color: white;
-  width: 80px;
-  border-radius: 22px;
-  line-height: 50px;
+  width: 68px;
+  margin-left: 8px;
+  border-radius: 18px;
+  line-height: 40px;
   text-align: center;
+  font-size: 30px;
 }
 
 
