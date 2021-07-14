@@ -129,6 +129,8 @@ function gotoIndex(index){
     $(this).removeClass('active');
     $('.gallery_item:nth-child('+index+')').addClass('active');
     $('.gallery_item:nth-child('+index+')').fadeIn(200);
+
+    attachPinch(indexDisplay);
   })
 }
 
@@ -184,9 +186,9 @@ function attachPinch(indexDisplay){
   // hamObj.get('pinch').set({ enable: true });
   // $(wrapper).data("hammer", hamObj);
   // ENABLE PINCH
-  var hamObj2 = new Hammer($(image)[0]);
-  hamObj2.get('pinch').set({ enable: true });
-  $(image).data("hammer", hamObj2);
+  var hamObject = new Hammer($(image)[0]);
+  hamObject.get('pinch').set({ enable: true });
+  $(image).data("hammer", hamObject);
 
 
   $(image).hammer().on("pinch", function(event) {

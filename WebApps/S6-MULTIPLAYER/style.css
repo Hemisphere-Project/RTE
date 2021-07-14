@@ -119,6 +119,7 @@
 } */
 #page_gallery .gallery .gallery_item{
   position: absolute;
+  overflow:hidden;
   width:70%;
   left: 8%;
   top: 10vh;
