@@ -157,9 +157,13 @@ $('#page_gallery_list .list_item').click(function(){
 var hamObj = new Hammer($('body')[0]);
 hamObj.get('pinch').set({ enable: true });
 $('body').data("hammer", hamObj);
-
 $('body').hammer().on("pinch", function(event) {
+  console.log('pinching');
 });
+
+var hammertime = new Hammer($('body')[0]);
+hammertime.get('pinch').set({ enable: true });
+hammertime.on("pinch", function(e) { console.log("pinching 2") });
 
 
 function attachPinch(indexDisplay){
