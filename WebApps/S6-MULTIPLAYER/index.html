@@ -25,73 +25,115 @@
 <body>
 
 
-    <div class="page" id="page_home">
-      <div class="title_big capslock btn" id="btn_home">Touchez l'écran <br>pour accéder <br>à son contenu</div>
-    </div>
+  <div class="page" id="page_home">
+    <div class="title_big capslock btn" id="btn_home">Touchez l'écran <br>pour accéder <br>à son contenu</div>
+  </div>
 
-    <div class="page" id="page_list">
-      <div class="list">
-        <div id="goVideo" class="list_item btn">
-          <div class="title_maxi">Film</div>
-          <div class="videolegend">
-            <div class="title_small">Durée • </div>
-            <div class="text_medium">5 min</div>
-          </div>
+
+  <div class="page" id="page_list">
+    <div class="list">
+      <div id="goVideo" class="list_item btn">
+        <div class="title_maxi">Film</div>
+        <div class="videolegend">
+          <div class="title_small">Durée • </div>
+          <div class="text_medium">5 min</div>
         </div>
-        <div id="goGallery" class="list_item btn">
-          <div class="title_maxi">Galerie Photo</div>
+      </div>
+      <div id="goGallery" class="list_item btn">
+        <div class="title_maxi">Galerie Photo</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="page" id="page_video">
+    <video id="videoplayer" src="/medias/S6/videoS6.mp4"></video>
+    <div id="scrollbarContainer"> <div id="scrollbar"></div> </div>
+    <div class="btn" id="btn_close_video"> <img src="/assets/img/cross_white.png" alt=""> </div>
+  </div>
+
+
+  <div class="page" id="page_gallery_list">
+    <div class="list">
+      <div class="list_item btn" galleryIndex="1">
+        <div class="list_item_title title_big" >Ariane</div>
+        <div class="list_item_legend text_small">1970 • 1986</div>
+      </div>
+      <div class="list_item btn" galleryIndex="3">
+        <div class="list_item_title title_big" >Briséis</div>
+        <div class="list_item_legend text_small">1975 • 1985</div>
+      </div>
+      <div class="list_item btn" galleryIndex="4">
+        <div class="list_item_title title_big" >Cynthia</div>
+        <div class="list_item_legend text_small">1985 • 1994</div>
+      </div>
+      <div class="list_item btn" galleryIndex="6">
+        <div class="list_item_title title_big" >Daphné</div>
+        <div class="list_item_legend text_small">1986 • 2010</div>
+      </div>
+      <div class="list_item btn" galleryIndex="9">
+        <div class="list_item_title title_big" >Electre</div>
+        <div class="list_item_legend text_small">dès 2002</div>
+      </div>
+    </div>
+    <div class="btn" id="btn_close_gallerylist"> <img src="/assets/img/retour.png" alt=""> </div>
+    <div class="title_big" id="page_gallery_list_title">Les Fileries</div>
+  </div>
+
+
+  <div class="page" id="page_gallery">
+    <div class="galleryContainer">
+      <div class="btn" id="btn_close_gallery"> <img src="/assets/img/retour.png" alt=""> </div>
+      <div class="btn" id="btn_next"> <img src="/assets/img/next.png" alt=""> </div>
+      <div class="gallery">
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/1 Tranche Ligne Ariane HT.jpg">
+          <div class="legend text_small">Tranche Ligne Ariane HT</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/2 Tranche ligne Ariane HT.jpg">
+          <div class="legend text_small">Tranche ligne Ariane HT</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/3 Tranche ligne 400kV Briseis.jpg">
+          <div class="legend text_small">Tranche ligne 400kV Briseis</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/4 Tranche Ligne 225kV Cynthia.jpg">
+          <div class="legend text_small">Tranche Ligne 225kV Cynthia</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/5 Tranche Transformateur Cynthia 225kV.jpg">
+          <div class="legend text_small">Tranche Transformateur Cynthia 225kV</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/6 Tranche ligne Daphne 400kV.jpg">
+          <div class="legend text_small">Tranche ligne Daphne 400kV</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/7 Tranches Barres et Synoptique Daphne.jpg">
+          <div class="legend text_small">Tranches Barres et Synoptique Daphne</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/8 Tranches Ligne de Comptage Daphne.jpg">
+          <div class="legend text_small">Tranches Ligne de Comptage Daphne</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/9 Tranche ligne Electre.jpg">
+          <div class="legend text_small">Tranche ligne Electre</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/10 Tranche Ligne 63kV Electre.jpg">
+          <div class="legend text_small">Tranche Ligne 63kV Electre</div>
+        </div>
+        <div class="gallery_item">
+          <img src="/medias/S6/fileries/11 Tranche Ligne 63kV Electre.jpg">
+          <div class="legend text_small">Tranche Ligne 63kV Electre</div>
         </div>
       </div>
     </div>
+  </div>
 
-
-    <div class="page" id="page_video">
-      <video id="videoplayer" src="/medias/S6/videoS6.mp4"></video>
-      <div id="scrollbarContainer"> <div id="scrollbar"></div> </div>
-      <!-- <div class="btn" id="btn_close"> <img src="/assets/img/cross_white.png" alt=""> </div> -->
-    </div>
-
-
-    <div class="page" id="page_gallery_list">
-      <div class="list">
-        <div class="list_item btn">
-          <div class="list_item_title title_big">Ariane</div>
-          <div class="list_item_legend text_small">1970 • 1986</div>
-        </div>
-        <div class="list_item btn">
-          <div class="list_item_title title_big">Briséis</div>
-          <div class="list_item_legend text_small">1975 • 1985</div>
-        </div>
-        <div class="list_item btn">
-          <div class="list_item_title title_big">Cynthia</div>
-          <div class="list_item_legend text_small">1985 • 1994</div>
-        </div>
-        <div class="list_item btn">
-          <div class="list_item_title title_big">Daphné</div>
-          <div class="list_item_legend text_small">1986 • 2010</div>
-        </div>
-        <div class="list_item btn">
-          <div class="list_item_title title_big">Electre</div>
-          <div class="list_item_legend text_small">dès 2002</div>
-        </div>
-      </div>
-      <div class="btn" id="btn_close_gallerylist"> <img src="/assets/img/retour.png" alt=""> </div>
-      <div class="title_big" id="page_gallery_list_title">Les Fileries</div>
-    </div>
-
-
-    <!-- <div class="page" id="page_gallery">
-      <div class="galleryContainer">
-        <div class="btn" id="btn_close_gallery"> <img src="/assets/img/retour.png" alt=""> </div>
-        <div class="gallery">
-          <div class="gallery_item">
-            <img src="/medias/S6/fileries/1 Tranche Ligne Ariane HT.jpg" alt="">
-            <div class="legend text_small">Tranches Barres et Synoptique Daphne</div>
-          </div>
-        </div>
-
-      </div>
-    </div> -->
 
 
     <!-- JS -->
