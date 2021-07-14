@@ -184,7 +184,7 @@ function attachPinch(indexDisplay){
   $(image).data("hammer", hammerObj2);
 
 
-  $(image).hammer().on("pinch", function(event) {
+  $(wrapper).hammer().on("pinch", function(event) {
     console.log('pinching');
     var photo = $(this);
 
