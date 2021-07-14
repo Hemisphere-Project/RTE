@@ -143,7 +143,7 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item:nth-child('+indexDisplay+')').addClass('active');
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
 
-  attachPinch(indexDisplay);
+  // attachPinch(indexDisplay);
 })
 
 
