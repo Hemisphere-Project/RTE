@@ -143,7 +143,7 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item:nth-child('+indexDisplay+')').addClass('active');
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
 
-  initPinch(indexDisplay);
+  attachPinch(indexDisplay);
 })
 
 
@@ -154,32 +154,31 @@ $('#page_gallery_list .list_item').click(function(){
 // -- ?
 // pinch enabled ? sur wrapper ou sur div ? à débugger depuis touch device
 
-function initPinch(indexDisplay){
+
+function attachPinch(indexDisplay){
+
 
   var wrapper = $('.gallery_item:nth-child('+indexDisplay+')')
-  var img = $(wrapper).children('img')
+  var image = $(wrapper).children('img')
 
-  var hamObj = new Hammer($(wrapper)[0]);
-  hamObj.get('pinch').set({ enable: true });
-  $(wrapper).data("hammer", hamObj);
-
-  attachPinch(wrapper,img)
-
-}
-
-
-function attachPinch(wrapperID,imgID){
-
-  var image = $(imgID);
-  var wrap = $(wrapperID);
   var  width = image.width();
   var  height = image.height();
   console.log(width);
   var  newX = 0;
   var  newY = 0;
-  var  offset = wrap.offset();
+  var  offset = wrapper.offset();
 
-  $(imgID).hammer().on("pinch", function(event) {
+  // ENABLE PINCH
+  var hamObj = new Hammer($(wrapper)[0]);
+  hamObj.get('pinch').set({ enable: true });
+  $(wrapper).data("hammer", hamObj);
+  // ENABLE PINCH
+  var hamObj2 = new Hammer($(image)[0]);
+  hamObj2.get('pinch').set({ enable: true });
+  $(image).data("hammer", hamObj);
+  
+
+  $(image).hammer().on("pinch", function(event) {
     console.log('pinching');
     var photo = $(this);
 
@@ -196,7 +195,7 @@ function attachPinch(wrapperID,imgID){
     newY += -y * (newHeight - height) / newHeight;
 
     photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
-    wrap.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
+    wrapper.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
 
     width = newWidth;
     height = newHeight;
