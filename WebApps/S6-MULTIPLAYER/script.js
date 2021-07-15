@@ -130,7 +130,7 @@ function gotoIndex(index){
     $('.gallery_item:nth-child('+index+')').addClass('active');
     $('.gallery_item:nth-child('+index+')').fadeIn(200);
 
-    // attachPinch(indexDisplay);
+    resetZoom()
   })
 }
 
@@ -145,7 +145,7 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item:nth-child('+indexDisplay+')').addClass('active');
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
 
-  // attachPinch(indexDisplay);
+  resetZoom()
 })
 
 
@@ -153,17 +153,22 @@ $('#page_gallery_list .list_item').click(function(){
 
 //////////////// PINCH-ZOOM ////////////////
 
-const pinchZoom = $('#mypinchzoom')[0];
+// using pinch-zoom.js
+// https://github.com/GoogleChromeLabs/pinch-zoom
 
-// pinchZoom.setTransform({
-//   scale: 1,
-//   x: 0,
-//   y: 0,
-//   // Fire a 'change' event if values are different to current values
-//   allowChangeEvent: false,
-// });
+// wrap every galery image with a <pinch-zoom> element
+$('.gallery_item img').each(function(index,div){
+    $(div).wrap('<pinch-zoom></pinch-zoom>');
+})
 
+function resetZoom(){
+  $('pinch-zoom').each(function(index,div){
+    $(div)[0].setTransform({ scale: 1, x: 0, y: 0 });
+  });
+}
 
+// Hack - allow hammer JS to catch pinch events - so the body can't be zoomed in
+// (also tried  this w no success) : <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 var hammertime = new Hammer($('body')[0]);
 hammertime.get('pinch').set({ enable: true });
 hammertime.on("pinch", function(e) { });
