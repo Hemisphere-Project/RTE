@@ -164,9 +164,3 @@ function resetZoom(){
     $(div)[0].setTransform({ scale: 1, x: 0, y: 0 });
   });
 }
-
-// Hack - allow hammer JS to catch pinch events - so the body can't be zoomed in
-// (also tried  this w no success) : <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-// var hammertime = new Hammer($('body')[0]);
-// hammertime.get('pinch').set({ enable: true });
-// hammertime.on("pinch", function(e) { });
