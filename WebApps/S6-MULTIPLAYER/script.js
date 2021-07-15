@@ -149,8 +149,6 @@ $('#page_gallery_list .list_item').click(function(){
 })
 
 
-
-
 //////////////// PINCH-ZOOM ////////////////
 
 // using pinch-zoom.js
@@ -169,71 +167,6 @@ function resetZoom(){
 
 // Hack - allow hammer JS to catch pinch events - so the body can't be zoomed in
 // (also tried  this w no success) : <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-var hammertime = new Hammer($('body')[0]);
-hammertime.get('pinch').set({ enable: true });
-hammertime.on("pinch", function(e) { });
-
-
-
-
-//////////////// PINCH ZOOM ////////////////
-
-// inspired from
-// https://stackoverflow.com/questions/10802176/pinch-to-zoom-with-css3
-// -- ?
-
 // var hammertime = new Hammer($('body')[0]);
 // hammertime.get('pinch').set({ enable: true });
 // hammertime.on("pinch", function(e) { });
-
-// TO DO
-// PINCH AND MOVE
-// RESET PINCH
-
-// function attachPinch(indexDisplay){
-//
-//
-//   var wrapper = $('.gallery_item:nth-child('+indexDisplay+')')
-//   var image = $(wrapper).children('img')
-//
-//   var  width = image.width();
-//   var  height = image.height();
-//   console.log(width);
-//   var  newX = 0;
-//   var  newY = 0;
-//   var  offset = wrapper.offset();
-//
-//   // ENABLE PINCH
-//   // var hammerObj1 = new Hammer($(wrapper)[0]);
-//   // hammerObj1.get('pinch').set({ enable: true });
-//   // $(wrapper).data("hammer", hammerObj1);
-//   // ENABLE PINCH
-//   var hammerObj2 = new Hammer($(image)[0]);
-//   hammerObj2.get('pinch').set({ enable: true });
-//   $(image).data("hammer", hammerObj2);
-//
-//
-//   $(image).hammer().on("pinch", function(event) {
-//     console.log('pinching');
-//     var photo = $(this);
-//
-//     newWidth = photo.width() * event.gesture.scale;
-//     newHeight = photo.height() * event.gesture.scale;
-//
-//     // Convert from screen to image coordinates
-//     var x;
-//     var y;
-//     x -= offset.left + newX;
-//     y -= offset.top + newY;
-//
-//     newX += -x * (newWidth - width) / newWidth;
-//     newY += -y * (newHeight - height) / newHeight;
-//
-//     photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
-//     wrapper.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
-//
-//     width = newWidth;
-//     height = newHeight;
-//   });
-//
-// }
