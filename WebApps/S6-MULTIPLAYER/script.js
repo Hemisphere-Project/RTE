@@ -164,6 +164,10 @@ const pinchZoom = $('#mypinchzoom')[0];
 // });
 
 
+var hammertime = new Hammer($('body')[0]);
+hammertime.get('pinch').set({ enable: true });
+hammertime.on("pinch", function(e) { });
+
 
 
 
