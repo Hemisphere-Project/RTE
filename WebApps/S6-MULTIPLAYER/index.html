@@ -16,6 +16,9 @@
     <script src="/assets/libs/hammer.min.js"></script>
     <script src="/assets/libs/jquery.hammer.js"></script>
 
+    <script src="/assets/libs/pinch-zoom.js"></script>
+    <!-- https://github.com/GoogleChromeLabs/pinch-zoom -->
+
     <!-- STYLE -->
     <link rel="stylesheet" href="/assets/common.css" />
     <link rel="stylesheet" href="/style.css" />
@@ -87,11 +90,11 @@
       <div class="btn" id="btn_close_gallery"> <img src="/assets/img/retour.png" alt=""> </div>
       <div class="btn" id="btn_next"> <img src="/assets/img/next.png" alt=""> </div>
       <div class="gallery">
-        <div class="gallery_item">
-          <img src="/medias/S6/fileries/1 Tranche Ligne Ariane HT.jpg">
+        <div class="gallery_item pinch-zoom">
+          <pinch-zoom><img src="/medias/S6/fileries/1 Tranche Ligne Ariane HT.jpg"></pinch-zoom>
           <div class="legend text_small">Tranche Ligne Ariane HT</div>
         </div>
-        <div class="gallery_item">
+        <div id="mypinchzoom"class="gallery_item">
           <img src="/medias/S6/fileries/2 Tranche ligne Ariane HT.jpg">
           <div class="legend text_small">Tranche ligne Ariane HT</div>
         </div>

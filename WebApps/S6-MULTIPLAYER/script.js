@@ -130,7 +130,7 @@ function gotoIndex(index){
     $('.gallery_item:nth-child('+index+')').addClass('active');
     $('.gallery_item:nth-child('+index+')').fadeIn(200);
 
-    attachPinch(indexDisplay);
+    // attachPinch(indexDisplay);
   })
 }
 
@@ -145,8 +145,26 @@ $('#page_gallery_list .list_item').click(function(){
   $('.gallery_item:nth-child('+indexDisplay+')').addClass('active');
   $('.gallery_item:nth-child('+indexDisplay+')').fadeIn(200);
 
-  attachPinch(indexDisplay);
+  // attachPinch(indexDisplay);
 })
+
+
+
+
+//////////////// PINCH-ZOOM ////////////////
+
+const pinchZoom = $('#mypinchzoom')[0];
+
+// pinchZoom.setTransform({
+//   scale: 1,
+//   x: 0,
+//   y: 0,
+//   // Fire a 'change' event if values are different to current values
+//   allowChangeEvent: false,
+// });
+
+
+
 
 
 //////////////// PINCH ZOOM ////////////////
@@ -159,52 +177,54 @@ $('#page_gallery_list .list_item').click(function(){
 // hammertime.get('pinch').set({ enable: true });
 // hammertime.on("pinch", function(e) { });
 
+// TO DO
+// PINCH AND MOVE
 // RESET PINCH
 
-function attachPinch(indexDisplay){
-
-
-  var wrapper = $('.gallery_item:nth-child('+indexDisplay+')')
-  var image = $(wrapper).children('img')
-
-  var  width = image.width();
-  var  height = image.height();
-  console.log(width);
-  var  newX = 0;
-  var  newY = 0;
-  var  offset = wrapper.offset();
-
-  // ENABLE PINCH
-  var hammerObj1 = new Hammer($(wrapper)[0]);
-  hammerObj1.get('pinch').set({ enable: true });
-  $(wrapper).data("hammer", hammerObj1);
-  // ENABLE PINCH
-  var hammerObj2 = new Hammer($(image)[0]);
-  hammerObj2.get('pinch').set({ enable: true });
-  $(image).data("hammer", hammerObj2);
-
-
-  $(image).hammer().on("pinch", function(event) {
-    console.log('pinching');
-    var photo = $(this);
-
-    newWidth = photo.width() * event.gesture.scale;
-    newHeight = photo.height() * event.gesture.scale;
-
-    // Convert from screen to image coordinates
-    var x;
-    var y;
-    x -= offset.left + newX;
-    y -= offset.top + newY;
-
-    newX += -x * (newWidth - width) / newWidth;
-    newY += -y * (newHeight - height) / newHeight;
-
-    photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
-    wrapper.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
-
-    width = newWidth;
-    height = newHeight;
-  });
-
-}
+// function attachPinch(indexDisplay){
+//
+//
+//   var wrapper = $('.gallery_item:nth-child('+indexDisplay+')')
+//   var image = $(wrapper).children('img')
+//
+//   var  width = image.width();
+//   var  height = image.height();
+//   console.log(width);
+//   var  newX = 0;
+//   var  newY = 0;
+//   var  offset = wrapper.offset();
+//
+//   // ENABLE PINCH
+//   // var hammerObj1 = new Hammer($(wrapper)[0]);
+//   // hammerObj1.get('pinch').set({ enable: true });
+//   // $(wrapper).data("hammer", hammerObj1);
+//   // ENABLE PINCH
+//   var hammerObj2 = new Hammer($(image)[0]);
+//   hammerObj2.get('pinch').set({ enable: true });
+//   $(image).data("hammer", hammerObj2);
+//
+//
+//   $(image).hammer().on("pinch", function(event) {
+//     console.log('pinching');
+//     var photo = $(this);
+//
+//     newWidth = photo.width() * event.gesture.scale;
+//     newHeight = photo.height() * event.gesture.scale;
+//
+//     // Convert from screen to image coordinates
+//     var x;
+//     var y;
+//     x -= offset.left + newX;
+//     y -= offset.top + newY;
+//
+//     newX += -x * (newWidth - width) / newWidth;
+//     newY += -y * (newHeight - height) / newHeight;
+//
+//     photo.css('-webkit-transform', "scale3d("+event.gesture.scale+", "+event.gesture.scale+", 1)");
+//     wrapper.css('-webkit-transform', "translate3d("+newX+"px, "+newY+"px, 0)");
+//
+//     width = newWidth;
+//     height = newHeight;
+//   });
+//
+// }
