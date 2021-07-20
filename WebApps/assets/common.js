@@ -46,27 +46,29 @@ socket.on('reset', (data) => {
 
 // RELOAD PAGE AFTER INACTIVITY
 var inactivityTime = function() {
-    var timer;
+    var timerInactivity;
 
-    window.onload = timerReset();
-    document.onkeypress = timerReset();
-    document.onmousemove = timerReset();
-    document.onmousedown = timerReset();
-    document.ontouchstart = timerReset();
-    document.onclick = timerReset();
-    document.onscroll = timerReset();
-    document.onkeypress = timerReset();
+    // window.onload = timerReset;
+    // document.onkeypress = timerReset;
+    // document.onmousemove = timerReset;
+    // document.onmousedown = timerReset;
+    // document.ontouchstart = timerReset;
+    // document.onclick = timerReset;
+    // document.onscroll = timerReset;
+    // document.onkeypress = timerReset;
+    $('body').mousemove(function(){ timerReset(); })
+    $('body').click(function(){ timerReset(); })
     $('#videoplayer').on('timeupdate', function(e){timerReset()})
 
     function timerElapsed() {
-        // console.log("Timer elapsed");
+        console.log("Timer elapsed");
         location.reload();
     };
 
     function timerReset() {
-      // console.log("resetting timer");
-        clearTimeout(timer);
-        timer = setTimeout(timerElapsed, 30000); // timeout ms
+      console.log("resetting timer");
+        clearTimeout(timerInactivity);
+        timerInactivity = setTimeout(timerElapsed, 3000); // timeout ms
     }
 };
 inactivityTime()
