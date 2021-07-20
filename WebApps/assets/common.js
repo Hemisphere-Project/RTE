@@ -48,14 +48,14 @@ socket.on('reset', (data) => {
 var inactivityTime = function() {
     var timer;
 
-    window.onload = timerReset;
-    document.onkeypress = timerReset;
-    document.onmousemove = timerReset;
-    document.onmousedown = timerReset;
-    document.ontouchstart = timerReset;
-    document.onclick = timerReset;
-    document.onscroll = timerReset;
-    document.onkeypress = timerReset;
+    window.onload = timerReset();
+    document.onkeypress = timerReset();
+    document.onmousemove = timerReset();
+    document.onmousedown = timerReset();
+    document.ontouchstart = timerReset();
+    document.onclick = timerReset();
+    document.onscroll = timerReset();
+    document.onkeypress = timerReset();
     $('#videoplayer').on('timeupdate', function(e){timerReset()})
 
     function timerElapsed() {
