@@ -61,14 +61,14 @@ var inactivityTime = function() {
     $('#videoplayer').on('timeupdate', function(e){timerReset()})
 
     function timerElapsed() {
-        console.log("Timer elapsed");
+        // console.log("Timer elapsed");
         location.reload();
     };
 
     function timerReset() {
-      console.log("resetting timer");
+      // console.log("resetting timer");
         clearTimeout(timerInactivity);
-        timerInactivity = setTimeout(timerElapsed, 3000); // timeout ms
+        timerInactivity = setTimeout(timerElapsed, 30000); // timeout ms
     }
 };
 inactivityTime()
