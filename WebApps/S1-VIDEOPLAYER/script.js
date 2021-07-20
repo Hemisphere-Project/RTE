@@ -86,14 +86,16 @@ var idleTime = 3000;
 var autoHideControls = function() {
   var timer;
 
-  window.onload = timerReset;
-  document.onkeypress = timerReset;
-  document.onmousemove = timerReset;
-  document.onmousedown = timerReset;
-  document.ontouchstart = timerReset;
-  document.onclick = timerReset;
-  document.onscroll = timerReset;
-  document.onkeypress = timerReset;
+  // window.onload = timerReset;
+  // document.onkeypress = timerReset;
+  // document.onmousemove = timerReset;
+  // document.onmousedown = timerReset;
+  // document.ontouchstart = timerReset;
+  // document.onclick = timerReset;
+  // document.onscroll = timerReset;
+  // document.onkeypress = timerReset;
+  $('body').mousemove(function(){ timerReset(); })
+  $('body').click(function(){ timerReset(); })
 
   function timerElapsed() {
     hideControls();
