@@ -88,8 +88,8 @@
   width: 100%;
   background-color: black;
   border: 1px solid white;
-  padding-right: 60px;
-  padding-top: 45px;
+  padding-right: 45px;
+  padding-top: 60px;
   box-sizing: border-box;
 }
 #page_gallery_list .list_item_legend{
@@ -122,6 +122,18 @@
   left: 8%;
   top: 10vh;
 }
+#page_gallery .gallery .gallery_interlayer{
+  border: 1px solid white;
+  height:80vh;
+}
+#page_gallery .gallery .gallery_interlayer .gallery_interlayer_content{
+  padding-top: 22%;
+  padding-left: 100px;
+}
+#page_gallery .gallery .gallery_interlayer .gallery_interlayer_content *{
+  padding-bottom: 30px;
+}
+
 #page_gallery .gallery .gallery_item img{
   max-height: 80vh;
   user-select: none;

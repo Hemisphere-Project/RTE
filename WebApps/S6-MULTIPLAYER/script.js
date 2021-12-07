@@ -94,6 +94,9 @@ var autoHideControls = function() {
   // document.onclick = timerReset;
   // document.onscroll = timerReset;
   // document.onkeypress = timerReset;
+
+
+
   $('body').mousemove(function(){ timerReset(); })
   $('body').click(function(){ timerReset(); })
 
@@ -127,10 +130,10 @@ $('#btn_next').click(function(){
 })
 
 function gotoIndex(index){
-  $('.gallery_item.active').fadeOut(200,function(){
+  $('.gallery_item.active').fadeOut(150,function(){
     $(this).removeClass('active');
     $('.gallery_item:nth-child('+index+')').addClass('active');
-    $('.gallery_item:nth-child('+index+')').fadeIn(200);
+    $('.gallery_item:nth-child('+index+')').fadeIn(150);
 
     resetZoom()
   })
