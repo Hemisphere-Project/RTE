@@ -46,33 +46,33 @@ socket.on('reset', (data) => {
 
 // RELOAD PAGE AFTER INACTIVITY
 var inactivityTime = function() {
-    var timerInactivity;
+  var timerInactivity;
 
-    // window.onload = timerReset;
-    // document.onkeypress = timerReset;
-    // document.onmousemove = timerReset;
-    // document.onmousedown = timerReset;
-    // document.ontouchstart = timerReset;
-    // document.onclick = timerReset;
-    // document.onscroll = timerReset;
-    // document.onkeypress = timerReset;
-    $('body').mousemove(function(){ timerReset(); })
-    $('body').click(function(){ timerReset(); })
-    $('#videoplayer').on('timeupdate', function(e){timerReset()})
+  // window.onload = timerReset;
+  // document.onkeypress = timerReset;
+  // document.onmousemove = timerReset;
+  // document.onmousedown = timerReset;
+  // document.ontouchstart = timerReset;
+  // document.onclick = timerReset;
+  // document.onscroll = timerReset;
+  // document.onkeypress = timerReset;
+  $('body').mousemove(function(){ timerReset(); })
+  $('body').click(function(){ timerReset(); })
+  $('#videoplayer').on('timeupdate', function(e){timerReset()})
 
-    function timerElapsed() {
-        // console.log("Timer elapsed");
-        location.reload();
-    };
+  function timerElapsed() {
+    // console.log("Timer elapsed");
+    location.reload();
+  };
 
-    function timerReset() {
-      // console.log("resetting timer");
-        var idleTime = 60000 // timeout ms
-        if(!$('#page-web').is(":hidden")){console.log('WE ON THE WEB'); idleTime = 300000;}
-        else{ console.log('WE NOT ON THE WEB'); idleTime = 60000; }
-        clearTimeout(timerInactivity);
-        timerInactivity = setTimeout(timerElapsed, idleTime);
-    }
+  function timerReset() {
+    // console.log("resetting timer");
+    var idleTime
+    if($('#page_web').is(':visible')){ idleTime = 300000; }
+    else{ idleTime = 60000; }
+    clearTimeout(timerInactivity);
+    timerInactivity = setTimeout(timerElapsed, idleTime);
+  }
 };
 inactivityTime()
 
