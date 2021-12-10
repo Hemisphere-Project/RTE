@@ -67,8 +67,11 @@ var inactivityTime = function() {
 
     function timerReset() {
       // console.log("resetting timer");
+        var idleTime = 60000 // timeout ms
+        if(!$('#page-web').is(":hidden")){console.log('WE ON THE WEB'); idleTime = 300000;}
+        else{ console.log('WE NOT ON THE WEB'); idleTime = 60000; }
         clearTimeout(timerInactivity);
-        timerInactivity = setTimeout(timerElapsed, 30000); // timeout ms
+        timerInactivity = setTimeout(timerElapsed, idleTime);
     }
 };
 inactivityTime()
